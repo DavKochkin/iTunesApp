@@ -139,6 +139,10 @@ class SignUpViewController: UIViewController {
         setConstraints()
         setupDelegate()
         setupDatePicker()
+        registerKeyboardNotification()
+    }
+    deinit {
+        removeKeyboardNotification()
     }
     
     private func setupViews() {
@@ -213,6 +217,30 @@ extension SignUpViewController {
         datePicker.clipsToBounds = true
         datePicker.layer.cornerRadius = 6
         datePicker.tintColor = .black
+    }
+}
+
+extension SignUpViewController {
+    private func registerKeyboardNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    private func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        let userInfo = notification.userInfo
+        let keyboardHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardHeight.height / 2)
+    }
+    @objc func keyboardWillHide() {
+        scrollView.contentOffset = CGPoint.zero
     }
 }
 

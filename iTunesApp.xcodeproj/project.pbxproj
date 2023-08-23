@@ -51,6 +51,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04571B482A96833B0033BC38 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				049D38122A93A71300F934D3 /* Cells */,
+				049D37F82A8B9CF900F934D3 /* AuthViewController.swift */,
+				049D38082A93810000F934D3 /* SignUpViewController.swift */,
+				049D380E2A93A29F00F934D3 /* AlbumsViewController.swift */,
+				049D38152A94C3AA00F934D3 /* DetailAlbumViewController.swift */,
+				049D38192A94CA0A00F934D3 /* UserInfoViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04571B492A9683640033BC38 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				049D37F42A8B9CF900F934D3 /* AppDelegate.swift */,
+				049D37F62A8B9CF900F934D3 /* SceneDelegate.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
 		049D37E82A8B9CF900F934D3 = {
 			isa = PBXGroup;
 			children = (
@@ -70,14 +92,8 @@
 		049D37F32A8B9CF900F934D3 /* iTunesApp */ = {
 			isa = PBXGroup;
 			children = (
-				049D38122A93A71300F934D3 /* Cells */,
-				049D37F42A8B9CF900F934D3 /* AppDelegate.swift */,
-				049D37F62A8B9CF900F934D3 /* SceneDelegate.swift */,
-				049D37F82A8B9CF900F934D3 /* AuthViewController.swift */,
-				049D38082A93810000F934D3 /* SignUpViewController.swift */,
-				049D380E2A93A29F00F934D3 /* AlbumsViewController.swift */,
-				049D38152A94C3AA00F934D3 /* DetailAlbumViewController.swift */,
-				049D38192A94CA0A00F934D3 /* UserInfoViewController.swift */,
+				04571B492A9683640033BC38 /* Applications */,
+				04571B482A96833B0033BC38 /* Controllers */,
 				049D380A2A93825C00F934D3 /* Extensions */,
 				049D37FD2A8B9CFA00F934D3 /* Assets.xcassets */,
 				049D37FF2A8B9CFA00F934D3 /* LaunchScreen.storyboard */,
