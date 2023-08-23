@@ -191,6 +191,16 @@ class SignUpViewController: UIViewController {
 extension SignUpViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let text = (firstNameTextField.text ?? "") + string
+        let result: String
+        
+        if range.length == 1 {
+            let end = text.index(text.startIndex, offsetBy: text.count - 1)
+            result = String(text[text.startIndex..<end])
+        } else {
+            result = text
+        }
+        firstNameTextField.text = result
         
         return false
     }
@@ -220,6 +230,7 @@ extension SignUpViewController {
     }
 }
 
+//MARK: - Keyboard Show/Hide
 extension SignUpViewController {
     private func registerKeyboardNotification() {
         NotificationCenter.default.addObserver(self,
