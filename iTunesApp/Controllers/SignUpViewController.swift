@@ -136,6 +136,7 @@ class SignUpViewController: UIViewController {
     let emailValidType: String.ValidTypes = .email
     let passwordValidType: String.ValidTypes = .password
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -208,6 +209,33 @@ class SignUpViewController: UIViewController {
             label.textColor = .systemRed
         }
     }
+    
+    private func setPhoneNumberMask(textField: UITextField, mask: String, string: String, range: NSRange) -> String{
+        
+        let text = textField.text ?? ""
+        let phone = (text as NSString).replacingCharacters(in: range, with: string)
+        let number = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result = ""
+        var index = number.startIndex
+        
+        for character in mask where index < number.endIndex {
+            if character == "X" {
+                result.append(number[index])
+                index = number.index(after: index)
+            } else {
+                result.append(character)
+            }
+        }
+        
+        if result.count == 13 {
+            phoneValidLabel.text = "Phone is valid"
+            phoneValidLabel.textColor = .systemGreen
+        } else {
+            phoneValidLabel.text = "Phone is not valid"
+            phoneValidLabel.textColor = .systemRed
+        }
+        return result
+    }
 }
 
 
@@ -246,6 +274,11 @@ extension SignUpViewController: UITextFieldDelegate {
                                              wrongMessage: "Password is not valid",
                                              string: string,
                                              range: range)
+        case phoneNumberTextField: phoneNumberTextField.text = setPhoneNumberMask(textField: phoneNumberTextField,
+                                                                                  mask: "+XXX XXXXXXXX",
+                                                                                  string: string,
+                                                                                  range: range)
+        
         default:
             break
         }
