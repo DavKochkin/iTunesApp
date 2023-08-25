@@ -177,7 +177,32 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func signUpButtonTapped() {
-        print("SignUpTapped")
+        
+        let firstNameText = firstNameTextField.text ?? ""
+        let secondNameText = secondNameTextField.text ?? ""
+        let emailText = emailTextField.text ?? ""
+        let passwordText = passwordTextField.text ?? ""
+        let phoneText = phoneNumberTextField.text ?? ""
+        
+        if firstNameText.isValid(validType: nameValidType) &&
+            secondNameText.isValid(validType: nameValidType) &&
+            emailText.isValid(validType: emailValidType) &&
+            passwordText.isValid(validType: passwordValidType) &&
+            phoneText.count == 13 &&
+            ageValid() == true {
+            
+            DataBase.shared.saveUser(firstName: firstNameText,
+                                     secondName: secondNameText,
+                                     phone: phoneText,
+                                     email: emailText,
+                                     password: passwordText,
+                                     age: datePicker.date)
+            loginLabel.text = "Registration Complete"
+            loginLabel.textColor = . systemGreen
+        } else {
+            loginLabel.text = "Registration"
+            alertOk(title: "Error", message: "Fill in all fields and your age must be 18+ y.o.")
+        }
     }
     
     private func setupDelegate() {
