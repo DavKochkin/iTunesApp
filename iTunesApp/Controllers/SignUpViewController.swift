@@ -236,6 +236,17 @@ class SignUpViewController: UIViewController {
         }
         return result
     }
+    
+    private func ageValid() -> Bool {
+        let calendar = NSCalendar.current
+        let dateNow = Date()
+        let birthday = datePicker.date
+        
+        let age = calendar.dateComponents([.year], from: birthday, to: dateNow)
+        let ageYear = age.year
+        guard let ageUser = ageYear else { return false }
+        return (ageUser < 18 ? false : true)
+    }
 }
 
 
