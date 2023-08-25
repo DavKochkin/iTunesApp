@@ -107,8 +107,8 @@
 		049D380A2A93825C00F934D3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				049D380B2A93826E00F934D3 /* UIKit */,
 				04571B4A2A97D8730033BC38 /* String+ Extension.swift */,
+				049D380B2A93826E00F934D3 /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

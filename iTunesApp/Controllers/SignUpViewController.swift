@@ -133,6 +133,8 @@ class SignUpViewController: UIViewController {
     private let datePicker = UIDatePicker()
     
     let nameValidType: String.ValidTypes = .name
+    let emailValidType: String.ValidTypes = .email
+    let passwordValidType: String.ValidTypes = .password
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -223,6 +225,27 @@ extension SignUpViewController: UITextFieldDelegate {
                                               wrongMessage: "Only A-Z characters, min 1 character",
                                               string: string,
                                               range: range)
+        case secondNameTextField: setTextField(textField: secondNameTextField,
+                                              label: secondNameValidLabel,
+                                              validType: nameValidType,
+                                              validMessage: "Name is valid",
+                                              wrongMessage: "Only A-Z characters, min 1 character",
+                                              string: string,
+                                              range: range)
+        case emailTextField: setTextField(textField: emailTextField,
+                                          label: emailValidLabel,
+                                          validType: emailValidType,
+                                          validMessage: "Email is valid",
+                                          wrongMessage: "Email is not valid",
+                                          string: string,
+                                          range: range)
+        case passwordTextField: setTextField(textField: passwordTextField,
+                                             label: passwordValidLabel,
+                                             validType: passwordValidType,
+                                             validMessage: "Password is valid",
+                                             wrongMessage: "Password is not valid",
+                                             string: string,
+                                             range: range)
         default:
             break
         }
