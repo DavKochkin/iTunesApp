@@ -12,6 +12,7 @@
 		04571B512A98DCF50033BC38 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04571B502A98DCF50033BC38 /* UserModel.swift */; };
 		04571B532A98EFF40033BC38 /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04571B522A98EFF40033BC38 /* AlertOk.swift */; };
 		04571B552A9C92B20033BC38 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04571B542A9C92B20033BC38 /* AlbumModel.swift */; };
+		04571B582A9C960D0033BC38 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04571B572A9C960D0033BC38 /* NetworkRequest.swift */; };
 		049D37F52A8B9CF900F934D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D37F42A8B9CF900F934D3 /* AppDelegate.swift */; };
 		049D37F72A8B9CF900F934D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D37F62A8B9CF900F934D3 /* SceneDelegate.swift */; };
 		049D37F92A8B9CF900F934D3 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D37F82A8B9CF900F934D3 /* AuthViewController.swift */; };
@@ -33,6 +34,7 @@
 		04571B502A98DCF50033BC38 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		04571B522A98EFF40033BC38 /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
 		04571B542A9C92B20033BC38 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		04571B572A9C960D0033BC38 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		049D37F12A8B9CF900F934D3 /* iTunesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049D37F42A8B9CF900F934D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049D37F62A8B9CF900F934D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		04571B562A9C95F90033BC38 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				04571B572A9C960D0033BC38 /* NetworkRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		049D37E82A8B9CF900F934D3 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 				04571B492A9683640033BC38 /* Applications */,
 				04571B482A96833B0033BC38 /* Controllers */,
 				04571B4F2A98DCE10033BC38 /* Models */,
+				04571B562A9C95F90033BC38 /* Network */,
 				04571B4C2A98DBA70033BC38 /* Services */,
 				049D380A2A93825C00F934D3 /* Extensions */,
 				049D37FD2A8B9CFA00F934D3 /* Assets.xcassets */,
@@ -245,6 +256,7 @@
 				04571B552A9C92B20033BC38 /* AlbumModel.swift in Sources */,
 				049D38092A93810000F934D3 /* SignUpViewController.swift in Sources */,
 				049D37F72A8B9CF900F934D3 /* SceneDelegate.swift in Sources */,
+				04571B582A9C960D0033BC38 /* NetworkRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
