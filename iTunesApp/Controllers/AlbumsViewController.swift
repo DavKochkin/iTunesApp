@@ -76,6 +76,7 @@ class AlbumsViewController: UIViewController {
                 
                 self?.albums = albumModel.results
                 print(self?.albums)
+                self?.tableView.reloadData()
             } else {
                 print(error!.localizedDescription)
             }
@@ -87,12 +88,13 @@ class AlbumsViewController: UIViewController {
 
 extension AlbumsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        albums.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AlbumsTableViewCell
-        
+        let album = albums[indexPath.row]
+        cell.configureAlbumCell(album: album)
         return cell
     }
 }
