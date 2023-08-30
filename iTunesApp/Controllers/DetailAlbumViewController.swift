@@ -132,6 +132,8 @@ class DetailAlbumViewController: UIViewController {
             albumLogo.image = nil
         }
     }
+   
+    
 }
 
 //MARK: CollectionView Delegate
